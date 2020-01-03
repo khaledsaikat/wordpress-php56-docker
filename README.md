@@ -30,3 +30,8 @@ or
 ## Access the site:
 
 http://localhost:8080/
+
+## Ref
+
+- https://www.sitepoint.com/how-to-manually-build-docker-containers-for-wordpress/
+- https://vsupalov.com/docker-arg-env-variable-guide/

@@ -27,4 +27,11 @@ ARG WORDPRESS_DB_HOST
 # Creating wp-config.php file on /var/www/html
 RUN wp config create --dbname=${WORDPRESS_DB_NAME} --dbuser=${WORDPRESS_DB_USER} --dbpass=${WORDPRESS_DB_PASSWORD} --dbhost=${WORDPRESS_DB_HOST} --allow-root --skip-check
 
+COPY entrypoint.sh /entrypoint.sh
+
+# makes the script executable
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
+
 CMD ["apache2-foreground"]
