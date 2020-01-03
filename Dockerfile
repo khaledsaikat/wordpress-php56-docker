@@ -24,13 +24,7 @@ ARG WORDPRESS_DB_USER
 ARG WORDPRESS_DB_PASSWORD
 ARG WORDPRESS_DB_HOST
 
-# Set environment variables from ARG
-ENV WORDPRESS_DB_NAME ${WORDPRESS_DB_NAME}
-ENV WORDPRESS_DB_USER ${WORDPRESS_DB_USER}
-ENV WORDPRESS_DB_PASSWORD ${WORDPRESS_DB_PASSWORD}
-ENV WORDPRESS_DB_HOST ${WORDPRESS_DB_HOST}
-
 # Creating wp-config.php file on /var/www/html
-RUN wp config create --dbname=$WORDPRESS_DB_NAME --dbuser=$WORDPRESS_DB_USER --dbpass=$WORDPRESS_DB_PASSWORD --dbhost=$WORDPRESS_DB_HOST --allow-root --skip-check
+RUN wp config create --dbname=${WORDPRESS_DB_NAME} --dbuser=${WORDPRESS_DB_USER} --dbpass=${WORDPRESS_DB_PASSWORD} --dbhost=${WORDPRESS_DB_HOST} --allow-root --skip-check
 
 CMD ["apache2-foreground"]

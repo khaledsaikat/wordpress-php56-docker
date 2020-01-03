@@ -25,3 +25,8 @@ Running with build:
 `docker-compose stop`
 or
 `docker-compose down`
+
+
+## Access the site:
+
+http://localhost:8080/

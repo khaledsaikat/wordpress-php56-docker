@@ -1,10 +1,9 @@
-version: '3'
+version: '3.1'
 
 services:
 
     db:
         # mysql/mysql-server is less in size than mysql
-        # mysql-server:8.0 is not working by default
         image: mysql/mysql-server:5.7
         restart: always
         environment:
@@ -22,15 +21,10 @@ services:
                 WORDPRESS_DB_USER: wordpress
                 WORDPRESS_DB_PASSWORD: wordpress
         ports:
-            - "82:80"
+            - "8080:80"
         depends_on:
             - db
         #volumes:
         #    # Mapping parent directory of the plugin to /src
         #    - .:/var/www/html
         restart: always
-        #environment:
-        #    WORDPRESS_DB_HOST: db:3306
-        #    WORDPRESS_DB_NAME: wordpress
-        #    WORDPRESS_DB_USER: wordpress
-        #    WORDPRESS_DB_PASSWORD: wordpress
