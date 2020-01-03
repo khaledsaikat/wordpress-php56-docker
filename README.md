@@ -2,23 +2,38 @@
 
 Running WordPress on PHP-5.6 with MySQL-5.7 on Docker container
 
+## Motivation
+
+- WordPress plugins/themes developers often need to make sure their plugins/themes are also compatible with php5.6
+- Official WordPress docker image support start from php7.2
+
 
 ## Running container
-Building image:
-`docker-compose build`
+Building image
+```sh
+docker-compose build
+```
 
 Running containers:
-`docker-compose up`
+```sh
+docker-compose up
+```
 
 Running container in the background -d flag (for “detached” mode)
-`docker-compose up -d`
+```sh
+docker-compose up -d
+```
 
 Running with build:
-`docker-compose up -d --build`
+```sh
+docker-compose up -d --build
+```
 
 
 ## Executing bash of wordpress container
-`docker-compose exec wordpress bash`
+```sh
+docker-compose exec wordpress bash
+```
 
 
 ## Stop services
@@ -31,7 +46,8 @@ or
 
 http://localhost:8080/
 
-## Ref
+
+## Reference
 
 - https://www.sitepoint.com/how-to-manually-build-docker-containers-for-wordpress/
 - https://vsupalov.com/docker-arg-env-variable-guide/
